@@ -292,7 +292,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center gap-4">
+            <div className="md:hidden flex items-center gap-3">
               {/* Mobile Language Switcher */}
               <div className="flex items-center bg-slate-100 rounded-full p-1 border border-slate-200">
                 <button
@@ -308,6 +308,20 @@ const Navbar = () => {
                   አማ
                 </button>
               </div>
+
+              {/* Mobile Favorites Button */}
+              <button
+                onClick={() => setShowFavorites(true)}
+                className="relative p-2 hover:bg-slate-100 rounded-full transition-colors"
+              >
+                <Heart size={20} className={favorites.length > 0 ? 'text-red-500 fill-red-500' : 'text-slate-600'} />
+                {favorites.length > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center font-bold text-[10px]">
+                    {favorites.length}
+                  </span>
+                )}
+              </button>
+
               <button onClick={() => setIsOpen(!isOpen)} className="text-slate-600 hover:text-slate-900 p-2">
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
