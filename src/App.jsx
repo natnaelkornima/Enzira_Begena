@@ -439,7 +439,7 @@ const App = () => {
           }
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
           body {
-            font-family: ${language === 'am' ? "'Shiromeda', 'Noto Sans Ethiopic', sans-serif" : "'Inter', sans-serif"};
+            font-family: ${language === 'am' ? "'Shiromeda', 'Noto Sans Ethiopic', sans-serif" : "'Geom', sans-serif"};
           }
         `}</style>
         <Navbar />
