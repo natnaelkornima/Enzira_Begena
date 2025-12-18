@@ -84,7 +84,7 @@ const begenas = [
     id: 1,
     number: "B-001",
     name: { en: "Royal Davit", am: "ሮያል ዳዊት" },
-    price: "15,000 ETB",
+    price: "10,000 ETB",
     image: "/begena_1.jpg",
     description: {
       en: "Traditional 10-string Begena made from quality wood.",
@@ -95,7 +95,7 @@ const begenas = [
     id: 2,
     number: "B-002",
     name: { en: "Lalibela Classic", am: "ላሊበላ ክላሲክ" },
-    price: "12,500 ETB",
+    price: "10,000 ETB",
     image: "/begena_2.jpg",
     description: {
       en: "Handcrafted with premium leather and authentic sound.",
@@ -106,7 +106,7 @@ const begenas = [
     id: 3,
     number: "B-003",
     name: { en: "Gondar Special", am: "ጎንደር ስፔሻል" },
-    price: "18,000 ETB",
+    price: "10,000 ETB",
     image: "/begena_1.jpg",
     description: {
       en: "Exquisite craftsmanship with detailed carvings.",
@@ -117,7 +117,7 @@ const begenas = [
     id: 4,
     number: "B-004",
     name: { en: "Axum Heritage", am: "አክሱም ቅርስ" },
-    price: "14,200 ETB",
+    price: "10,000 ETB",
     image: "/begena_2.jpg",
     description: {
       en: "A perfect blend of tradition and durability.",
@@ -128,7 +128,7 @@ const begenas = [
     id: 5,
     number: "B-005",
     name: { en: "Tana Reed", am: "ጣና ሪድ" },
-    price: "11,000 ETB",
+    price: "10,000 ETB",
     image: "/begena_1.jpg",
     description: {
       en: "Lightweight design with a deep, resonant tone.",
@@ -139,7 +139,7 @@ const begenas = [
     id: 6,
     number: "B-006",
     name: { en: "Sheba Gold", am: "ሳባ ጎልድ" },
-    price: "20,000 ETB",
+    price: "10,000 ETB",
     image: "/begena_2.jpg",
     description: {
       en: "Premium finish for professional players.",
