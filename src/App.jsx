@@ -83,9 +83,9 @@ const begenas = [
   {
     id: 1,
     number: "B-001",
-    name: { en: "Royal Davit", am: "ሮያል ዳዊት" },
+    name: { en: "Begena One", am: "በገና አንድ" },
     price: "10,000 ETB",
-    image: "/begena_1.jpg",
+    image: "/begena_new_1.jpg",
     description: {
       en: "Traditional 10-string Begena made from quality wood.",
       am: "ከጥራት እንጨት የተሰራ ባህላዊ የ10 ክር በገና።"
@@ -94,9 +94,9 @@ const begenas = [
   {
     id: 2,
     number: "B-002",
-    name: { en: "Lalibela Classic", am: "ላሊበላ ክላሲክ" },
+    name: { en: "Begena Two", am: "በገና ሁለት" },
     price: "10,000 ETB",
-    image: "/begena_2.jpg",
+    image: "/begena_new_2.png",
     description: {
       en: "Handcrafted with premium leather and authentic sound.",
       am: "በምርጥ ቆዳ እና ትክክለኛ ድምጽ በእጅ የተሰራ።"
@@ -105,9 +105,9 @@ const begenas = [
   {
     id: 3,
     number: "B-003",
-    name: { en: "Gondar Special", am: "ጎንደር ስፔሻል" },
+    name: { en: "Begena Three", am: "በገና ሶስት" },
     price: "10,000 ETB",
-    image: "/begena_1.jpg",
+    image: "/begena_new_3.jpg",
     description: {
       en: "Exquisite craftsmanship with detailed carvings.",
       am: "ልዩ ጥበብ ከዝርዝር ቅርጻ ቅርጾች ጋር።"
