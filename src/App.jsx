@@ -488,7 +488,7 @@ const Gallery = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
-          {begenas.map((item) => (
+          {begenas.slice(0, 3).map((item) => (
             <BegenaCard key={item.id} item={item} />
           ))}
         </div>
