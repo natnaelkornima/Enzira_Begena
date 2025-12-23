@@ -403,8 +403,8 @@ const BegenaDetailPage = ({ item, onClose }) => {
               <a
                 href={`https://t.me/enzira_begena?text=${encodeURIComponent(
                   language === 'am'
-                    ? `ሰላም! እባክዎን ይህን በገና ማዘዝ እፈልጋለሁ:\n\n📦 ምርት: ${item.name.am}\n🔢 ቁጥር: ${item.number}\n💰 ዋጋ: ${withBag ? item.priceWithBag : item.price}\n🎒 ቦርሳ: ${withBag ? 'አዎ' : 'የለም'}\n\nእባክዎን ተጨማሪ መረጃ ይስጡኝ።`
-                    : `Hello! I would like to order this Begena:\n\n📦 Product: ${item.name.en}\n🔢 Code: ${item.number}\n💰 Price: ${withBag ? item.priceWithBag : item.price}\n🎒 With Bag: ${withBag ? 'Yes' : 'No'}\n\nPlease provide me with more details.`
+                    ? `ሰላም! እባክዎን ይህን በገና ማዘዝ እፈልጋለሁ:\n\n📦 ምርት: ${item.name.am}\n🔢 ቁጥር: ${item.number}\n💰 ዋጋ: ${withBag ? item.priceWithBag : item.price}\n🎒 ቦርሳ: ${withBag ? 'አዎ' : 'የለም'}\n\n🖼️ ምስል: ${window.location.origin}${item.image}${withBag && item.bagImage ? `\n🖼️ የቦርሳ ምስል: ${window.location.origin}${item.bagImage}` : ''}\n\nእባክዎን ተጨማሪ መረጃ ይስጡኝ።`
+                    : `Hello! I would like to order this Begena:\n\n📦 Product: ${item.name.en}\n🔢 Code: ${item.number}\n💰 Price: ${withBag ? item.priceWithBag : item.price}\n🎒 With Bag: ${withBag ? 'Yes' : 'No'}\n\n🖼️ Image: ${window.location.origin}${item.image}${withBag && item.bagImage ? `\n🖼️ Bag Image: ${window.location.origin}${item.bagImage}` : ''}\n\nPlease provide me with more details.`
                 )}`}
                 target="_blank"
                 className="block w-full py-4 px-8 bg-gradient-to-r from-[#981c00] to-[#7a1600] text-white text-center rounded-2xl font-bold text-lg shadow-xl shadow-[#981c00]/30 hover:shadow-[#981c00]/50 hover:-translate-y-1 transition-all duration-300"
