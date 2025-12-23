@@ -29,6 +29,21 @@ const translations = {
       showAll: "Show All Instruments",
       price: "Price"
     },
+    detail: {
+      back: "Back to Gallery",
+      specifications: "Specifications",
+      strings: "10 Strings",
+      stringsDesc: "Made from lamb intestine",
+      dimensions: "53\" × 24\"",
+      dimensionsDesc: "Height × Width",
+      handcrafted: "Handcrafted",
+      handcraftedDesc: "Traditional Ethiopian craft",
+      packageOption: "Package Option",
+      withoutBag: "Begena Only",
+      withBag: "With Carrying Bag",
+      orderNow: "Order Now",
+      contactUs: "Contact us on Telegram or Instagram"
+    },
     favorites: {
       added: "Added to Favorites!",
       removed: "Removed from Favorites",
@@ -63,6 +78,21 @@ const translations = {
       showAll: "የምናቀርባቸው የበገና አይነቶችን ይመልከቱ",
       price: "ዋጋ"
     },
+    detail: {
+      back: "ወደ በገናዎች ተመለስ",
+      specifications: "ዝርዝሮች",
+      strings: "10 ክሮች",
+      stringsDesc: "ከበግ ትንታኔ የተሰሩ",
+      dimensions: "53\" × 24\"",
+      dimensionsDesc: "ቁመት × ስፋት",
+      handcrafted: "በእጅ የተሰራ",
+      handcraftedDesc: "ባህላዊ የኢትዮጵያ ጥበብ",
+      packageOption: "የጥቅል አማራጭ",
+      withoutBag: "በገና ብቻ",
+      withBag: "ከቦርሳ ጋር",
+      orderNow: "አሁን ይዘዙ",
+      contactUs: "በቴሌግራም ወይም ኢንስታግራም ያግኙን"
+    },
     favorites: {
       added: "ወደ ተወዳጆች ታክሏል!",
       removed: "ከተወዳጆች ተወግዷል",
@@ -84,40 +114,46 @@ const begenas = [
     id: 1,
     number: "B-001",
     name: { en: "Begena One", am: "በገና አንድ" },
-    price: "10,000 ETB",
+    price: "7,500 ETB",
+    priceWithBag: "9,000 ETB",
     image: "/begena_new_1.jpg",
+    bagImage: "/bag_1.jpg",
     description: {
-      en: "Traditional 10-string Begena made from quality wood.",
-      am: "ከጥራት እንጨት የተሰራ ባህላዊ የ10 ክር በገና።"
+      en: "Ethiopian spiritual instrument with amazing sound. 10 strings made from lamb intestine. Beautiful design with patterns and cross motifs. 53 inch long × 24 inch wide.",
+      am: "በድንቅ ዲዛይን የተዋበ በገና ከጉልህ ድምፅ ጋር። በእንስሳት ተዋጽዖ የተሰሩ 10 ክር ያሉት። በተለያዩ ሐረጎች መስቀል ዲዛይን የተዋበ። 53 ኢንች ቁመት እና 24 ኢንች ስፋት ያለው።"
     }
   },
   {
     id: 2,
     number: "B-002",
     name: { en: "Begena Two", am: "በገና ሁለት" },
-    price: "10,000 ETB",
+    price: "7,500 ETB",
+    priceWithBag: "9,000 ETB",
     image: "/begena_new_2.png",
+    bagImage: "/bag_2.jpg",
     description: {
-      en: "Handcrafted with premium leather and authentic sound.",
-      am: "በምርጥ ቆዳ እና ትክክለኛ ድምጽ በእጅ የተሰራ።"
+      en: "Ethiopian spiritual instrument with amazing sound. 10 strings made from lamb intestine. Handcrafted with premium leather and authentic resonance. 53 inch long × 24 inch wide.",
+      am: "በድንቅ ዲዛይን የተዋበ በገና ከጉልህ ድምፅ ጋር። በእንስሳት ተዋጽዖ የተሰሩ 10 ክር ያሉት። በተለያዩ ሐረጎች መስቀል ዲዛይን የተዋበ። 53 ኢንች ቁመት እና 24 ኢንች ስፋት ያለው።"
     }
   },
   {
     id: 3,
     number: "B-003",
     name: { en: "Begena Three", am: "በገና ሶስት" },
-    price: "10,000 ETB",
+    price: "7,500 ETB",
+    priceWithBag: "9,000 ETB",
     image: "/begena_new_3.jpg",
+    bagImage: "/bag_3.jpg",
     description: {
-      en: "Exquisite craftsmanship with detailed carvings.",
-      am: "ልዩ ጥበብ ከዝርዝር ቅርጻ ቅርጾች ጋር።"
+      en: "Ethiopian spiritual instrument with amazing sound. 10 strings made from lamb intestine. Beautiful design adorned with Saint David's image. 53 inch long × 24 inch wide.",
+      am: "በድንቅ ዲዛይን የተዋበ በገና ከጉልህ ድምፅ ጋር። በእንስሳት ተዋጽዖ የተሰሩ 10 ክር ያሉት። በቅዱስ ዳዊት ምስል የተዋበ። 53 ኢንች ቁመት እና 24 ኢንች ስፋት ያለው።"
     }
   },
   {
     id: 4,
     number: "B-004",
     name: { en: "Axum Heritage", am: "አክሱም ቅርስ" },
-    price: "10,000 ETB",
+    price: "7,500 ETB",
     image: "/begena_2.jpg",
     description: {
       en: "A perfect blend of tradition and durability.",
@@ -220,6 +256,167 @@ const FavoritesPanel = ({ isOpen, onClose }) => {
         </div>
       </div>
     </>
+  );
+};
+
+// --- Begena Detail Page ---
+const BegenaDetailPage = ({ item, onClose }) => {
+  const { language, t } = useContext(LanguageContext);
+  const [withBag, setWithBag] = useState(false);
+  const [showBagImage, setShowBagImage] = useState(false);
+
+  if (!item) return null;
+
+  const currentPrice = withBag ? item.priceWithBag : item.price;
+  const currentImage = showBagImage && item.bagImage ? item.bagImage : item.image;
+
+  return (
+    <div className="fixed inset-0 z-50 bg-white overflow-y-auto animate-in fade-in duration-300">
+      {/* Header */}
+      <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-lg border-b border-slate-100">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+          <button
+            onClick={onClose}
+            className="flex items-center gap-2 text-slate-600 hover:text-[#981c00] transition-colors font-medium"
+          >
+            <ChevronRight className="rotate-180" size={20} />
+            {t.detail.back}
+          </button>
+          <span className="text-sm font-bold text-[#981c00] bg-[#981c00]/10 px-4 py-2 rounded-full">
+            {item.number}
+          </span>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+
+          {/* Image Section */}
+          <div className="space-y-4">
+            <div className="relative aspect-[3/4] rounded-3xl overflow-hidden bg-gradient-to-br from-slate-100 to-slate-50 shadow-2xl">
+              <img
+                src={currentImage}
+                alt={item.name[language]}
+                className="w-full h-full object-cover transition-all duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+
+            {/* Image Toggle */}
+            {item.bagImage && (
+              <div className="flex gap-3 justify-center">
+                <button
+                  onClick={() => setShowBagImage(false)}
+                  className={`p-2 rounded-xl border-2 transition-all ${!showBagImage ? 'border-[#981c00] bg-[#981c00]/10' : 'border-slate-200 hover:border-slate-300'}`}
+                >
+                  <img src={item.image} alt="Begena" className="w-12 h-16 object-cover rounded-lg" />
+                </button>
+                <button
+                  onClick={() => setShowBagImage(true)}
+                  className={`p-2 rounded-xl border-2 transition-all ${showBagImage ? 'border-[#981c00] bg-[#981c00]/10' : 'border-slate-200 hover:border-slate-300'}`}
+                >
+                  <img src={item.bagImage} alt="With Bag" className="w-12 h-16 object-cover rounded-lg" />
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Details Section */}
+          <div className="space-y-8">
+            {/* Title & Price */}
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+                {item.name[language]}
+              </h1>
+              <div className="flex items-baseline gap-3">
+                <span className="text-4xl font-bold text-[#981c00]">{currentPrice}</span>
+                {withBag && (
+                  <span className="text-lg text-slate-400 line-through">{item.price}</span>
+                )}
+              </div>
+            </div>
+
+            {/* Description */}
+            <p className="text-lg text-slate-600 leading-relaxed">
+              {item.description[language]}
+            </p>
+
+            {/* Specifications */}
+            <div className="bg-slate-50 rounded-2xl p-4 sm:p-6 border border-slate-100">
+              <h3 className="text-lg font-bold text-slate-900 mb-4">{t.detail.specifications}</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <div className="text-center p-3 sm:p-4 bg-white rounded-xl shadow-sm">
+                  <div className="text-lg sm:text-xl font-bold text-[#981c00] mb-1">{t.detail.strings}</div>
+                  <div className="text-xs text-slate-500 break-words">{t.detail.stringsDesc}</div>
+                </div>
+                <div className="text-center p-3 sm:p-4 bg-white rounded-xl shadow-sm">
+                  <div className="text-lg sm:text-xl font-bold text-[#981c00] mb-1">{t.detail.dimensions}</div>
+                  <div className="text-xs text-slate-500 break-words">{t.detail.dimensionsDesc}</div>
+                </div>
+                <div className="text-center p-3 sm:p-4 bg-white rounded-xl shadow-sm">
+                  <div className="text-lg sm:text-xl font-bold text-[#981c00] mb-1">{t.detail.handcrafted}</div>
+                  <div className="text-xs text-slate-500 break-words">{t.detail.handcraftedDesc}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Package Option */}
+            {item.bagImage && (
+              <div className="bg-gradient-to-r from-[#981c00]/5 to-[#981c00]/10 rounded-2xl p-6 border border-[#981c00]/20">
+                <h3 className="text-lg font-bold text-slate-900 mb-4">{t.detail.packageOption}</h3>
+                <div className="space-y-3">
+                  <label
+                    className={`flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all ${!withBag ? 'bg-white border-2 border-[#981c00] shadow-lg' : 'bg-white/50 border border-slate-200 hover:border-slate-300'}`}
+                    onClick={() => setWithBag(false)}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${!withBag ? 'border-[#981c00] bg-[#981c00]' : 'border-slate-300'}`}>
+                        {!withBag && <div className="w-2 h-2 bg-white rounded-full"></div>}
+                      </div>
+                      <span className="font-medium text-slate-900">{t.detail.withoutBag}</span>
+                    </div>
+                    <span className="font-bold text-slate-900">{item.price}</span>
+                  </label>
+
+                  <label
+                    className={`flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all ${withBag ? 'bg-white border-2 border-[#981c00] shadow-lg' : 'bg-white/50 border border-slate-200 hover:border-slate-300'}`}
+                    onClick={() => setWithBag(true)}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${withBag ? 'border-[#981c00] bg-[#981c00]' : 'border-slate-300'}`}>
+                        {withBag && <div className="w-2 h-2 bg-white rounded-full"></div>}
+                      </div>
+                      <div>
+                        <span className="font-medium text-slate-900">{t.detail.withBag}</span>
+                        <span className="ml-2 text-xs bg-[#981c00] text-white px-2 py-0.5 rounded-full">+1,500 ETB</span>
+                      </div>
+                    </div>
+                    <span className="font-bold text-[#981c00]">{item.priceWithBag}</span>
+                  </label>
+                </div>
+              </div>
+            )}
+
+            {/* Order Button */}
+            <div className="space-y-4">
+              <a
+                href={`https://t.me/enzira_begena?text=${encodeURIComponent(
+                  language === 'am'
+                    ? `ሰላም! እባክዎን ይህን በገና ማዘዝ እፈልጋለሁ:\n\n📦 ምርት: ${item.name.am}\n🔢 ቁጥር: ${item.number}\n💰 ዋጋ: ${withBag ? item.priceWithBag : item.price}\n🎒 ቦርሳ: ${withBag ? 'አዎ' : 'የለም'}\n\nእባክዎን ተጨማሪ መረጃ ይስጡኝ።`
+                    : `Hello! I would like to order this Begena:\n\n📦 Product: ${item.name.en}\n🔢 Code: ${item.number}\n💰 Price: ${withBag ? item.priceWithBag : item.price}\n🎒 With Bag: ${withBag ? 'Yes' : 'No'}\n\nPlease provide me with more details.`
+                )}`}
+                target="_blank"
+                className="block w-full py-4 px-8 bg-gradient-to-r from-[#981c00] to-[#7a1600] text-white text-center rounded-2xl font-bold text-lg shadow-xl shadow-[#981c00]/30 hover:shadow-[#981c00]/50 hover:-translate-y-1 transition-all duration-300"
+              >
+                {t.detail.orderNow}
+              </a>
+              <p className="text-center text-slate-500 text-sm">{t.detail.contactUs}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -403,7 +600,7 @@ const Hero = () => {
   );
 };
 
-const BegenaCard = ({ item }) => {
+const BegenaCard = ({ item, onClick }) => {
   const { language, t } = useContext(LanguageContext);
   const { favorites, toggleFavorite } = useContext(FavoritesContext);
   const [showToast, setShowToast] = useState(false);
@@ -411,7 +608,8 @@ const BegenaCard = ({ item }) => {
 
   const isFavorite = favorites.includes(item.id);
 
-  const handleFavoriteClick = () => {
+  const handleFavoriteClick = (e) => {
+    e.stopPropagation();
     toggleFavorite(item.id);
     setIsAnimating(true);
     if (!isFavorite) {
@@ -422,7 +620,10 @@ const BegenaCard = ({ item }) => {
   };
 
   return (
-    <div className="group relative bg-white rounded-3xl p-2 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+    <div
+      onClick={onClick}
+      className="group relative bg-white rounded-3xl p-2 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+    >
       <div className="relative aspect-[2/3] rounded-2xl overflow-hidden">
         {/* Full Bleed Image - Cover for premium look, taller aspect ratio to fit instrument */}
         <img
@@ -475,7 +676,7 @@ const BegenaCard = ({ item }) => {
   );
 };
 
-const Gallery = () => {
+const Gallery = ({ onSelectBegena }) => {
   const { t } = useContext(LanguageContext);
   return (
     <section id="gallery" className="py-24 bg-slate-50/50">
@@ -489,7 +690,7 @@ const Gallery = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
           {begenas.slice(0, 3).map((item) => (
-            <BegenaCard key={item.id} item={item} />
+            <BegenaCard key={item.id} item={item} onClick={() => onSelectBegena(item)} />
           ))}
         </div>
 
@@ -567,6 +768,7 @@ const Footer = () => {
 const App = () => {
   const [language, setLanguage] = useState('en');
   const t = translations[language];
+  const [selectedBegena, setSelectedBegena] = useState(null);
 
   // Favorites state with localStorage persistence
   const [favorites, setFavorites] = useState(() => {
@@ -602,8 +804,16 @@ const App = () => {
 
           <Navbar />
           <Hero />
-          <Gallery />
+          <Gallery onSelectBegena={setSelectedBegena} />
           <Footer />
+
+          {/* Detail Page Overlay */}
+          {selectedBegena && (
+            <BegenaDetailPage
+              item={selectedBegena}
+              onClose={() => setSelectedBegena(null)}
+            />
+          )}
         </div>
       </FavoritesContext.Provider>
     </LanguageContext.Provider>
