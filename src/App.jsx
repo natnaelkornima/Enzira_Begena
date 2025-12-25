@@ -23,6 +23,12 @@ const translations = {
       viewCollection: "View Collection",
       learnMore: "Learn More"
     },
+    services: {
+      title: "Our Services",
+      delivery: "Free Delivery",
+      desc: " exclusively for our customers in Addis Ababa. We bring the sacred sounds to your doorstep with care.",
+      badge: "Premium Service"
+    },
     gallery: {
       title: "Featured Collection",
       desc: "Explore our meticulously crafted instruments, designed for both beginners and masters of the begena.",
@@ -71,6 +77,12 @@ const translations = {
       desc: "ታሪክን በአውታር፤ ጥራትን በጥበብ። በጥንቃቄ የተሰሩ የበገናዎችን እዚህ ያገኛሉ።",
       viewCollection: "በገኖችን ይመልከቱ",
       learnMore: "የበለጠ ለማወቅ"
+    },
+    services: {
+      title: "አገልግሎቶቻችን",
+      delivery: "ነፃ ማድረሻ",
+      desc: " ለአዲስ አበባ ደንበኞቻችን ብቻ። የተቀደሰውን ድምፅ በጥንቃቄ ወደ ደጃፍዎ እናመጣለን።",
+      badge: "ልዩ አገልግሎት"
     },
     gallery: {
       title: "የበገና አይነቶች",
@@ -152,12 +164,14 @@ const begenas = [
   {
     id: 4,
     number: "B-004",
-    name: { en: "Axum Heritage", am: "አክሱም ቅርስ" },
+    name: { en: "Begena Four", am: "በገና አራት" },
     price: "7,500 ETB",
-    image: "/begena_2.jpg",
+    priceWithBag: "9,000 ETB",
+    image: "/begena_new_4.png",
+    bagImage: "/bag_4.png",
     description: {
-      en: "A perfect blend of tradition and durability.",
-      am: "የባህል እና የመቆየት አቅም ፍጹም ውህደት።"
+      en: "Ethiopian spiritual instrument with amazing sound. 10 strings made from lamb intestine. Beautiful design with crown carvings and cross patterns. 53 inch long × 24 inch wide.",
+      am: "በድንቅ ዲዛይን የተዋበ በገና ከጉልህ ድምፅ ጋር። በእንስሳት ተዋጽዖ የተሰሩ 10 ክር ያሉት። በዘውድ ቅርጻ እና መስቀል ንድፍ የተዋበ። 53 ኢንች ቁመት እና 24 ኢንች ስፋት ያለው።"
     }
   },
   {
@@ -260,7 +274,7 @@ const FavoritesPanel = ({ isOpen, onClose }) => {
 };
 
 // --- Begena Detail Page ---
-const BegenaDetailPage = ({ item, onClose }) => {
+const BegenaDetailPage = ({ item, onClose, onContactClick }) => {
   const { language, t } = useContext(LanguageContext);
   const [withBag, setWithBag] = useState(false);
   const [showBagImage, setShowBagImage] = useState(false);
@@ -411,7 +425,12 @@ const BegenaDetailPage = ({ item, onClose }) => {
               >
                 {t.detail.orderNow}
               </a>
-              <p className="text-center text-slate-500 text-sm">{t.detail.contactUs}</p>
+              <button
+                onClick={onContactClick}
+                className="block w-full text-center text-slate-500 text-sm hover:text-[#981c00] transition-colors"
+              >
+                {t.detail.contactUs}
+              </button>
             </div>
           </div>
         </div>
@@ -483,7 +502,11 @@ const Navbar = () => {
                 )}
               </button>
 
-              <Button variant="primary" className="rounded-full px-6">
+              <Button
+                variant="primary"
+                className="rounded-full px-6"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 {t.nav.contact}
               </Button>
             </div>
@@ -534,7 +557,15 @@ const Navbar = () => {
               <a href="#gallery" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">{t.nav.gallery}</a>
               <a href="#about" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">{t.nav.about}</a>
               <div className="pt-4">
-                <Button className="w-full justify-center">{t.nav.contact}</Button>
+                <Button
+                  className="w-full justify-center"
+                  onClick={() => {
+                    setIsOpen(false);
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {t.nav.contact}
+                </Button>
               </div>
             </div>
           </div>
@@ -564,12 +595,17 @@ const Hero = () => {
           {t.hero.desc}
         </p>
         <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-          <Button className="h-14 px-10 text-base rounded-full shadow-xl shadow-[#981c00]/20 hover:shadow-[#981c00]/40 transition-all duration-300 transform hover:-translate-y-1 bg-[#981c00] hover:bg-[#7a1600] text-white border-none">
+          <Button
+            onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
+            className="h-14 px-10 text-base rounded-full shadow-xl shadow-[#981c00]/20 hover:shadow-[#981c00]/40 transition-all duration-300 transform hover:-translate-y-1 bg-[#981c00] hover:bg-[#7a1600] text-white border-none"
+          >
             {t.hero.viewCollection}
           </Button>
-          <Button variant="outline" className="h-14 px-10 text-base rounded-full border-slate-200 hover:border-[#981c00]/50 hover:text-[#981c00] hover:bg-[#981c00]/5 transition-all duration-300">
-            {t.hero.learnMore}
-          </Button>
+          <a href="https://www.instagram.com/enzira_begena/" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" className="h-14 px-10 text-base rounded-full border-slate-200 hover:border-[#981c00]/50 hover:text-[#981c00] hover:bg-[#981c00]/5 transition-all duration-300">
+              {t.hero.learnMore}
+            </Button>
+          </a>
         </div>
       </div>
 
@@ -688,8 +724,8 @@ const Gallery = ({ onSelectBegena }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
-          {begenas.slice(0, 3).map((item) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
+          {begenas.slice(0, 4).map((item) => (
             <BegenaCard key={item.id} item={item} onClick={() => onSelectBegena(item)} />
           ))}
         </div>
@@ -704,10 +740,65 @@ const Gallery = ({ onSelectBegena }) => {
   );
 };
 
+const Services = () => {
+  const { t } = useContext(LanguageContext);
+  return (
+    <section className="py-16 relative overflow-hidden">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-[#981c00]/5 to-white pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="bg-white rounded-[2.5rem] p-8 md:p-0 shadow-2xl shadow-[#981c00]/10 border border-[#981c00]/10 overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center">
+
+            {/* Text Content */}
+            <div className="flex-1 p-6 md:p-16 text-center md:text-left space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#981c00]/10 text-[#981c00] font-bold text-sm tracking-wide uppercase mb-2">
+                <span className="w-2 h-2 rounded-full bg-[#981c00] animate-pulse"></span>
+                {t.services.badge}
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+                {t.services.title}
+              </h2>
+
+              <div className="space-y-4">
+                <p className="text-2xl md:text-3xl font-medium text-slate-800">
+                  <span className="text-[#981c00] font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#981c00] to-[#ff4d4d] animate-pulse">
+                    {t.services.delivery}
+                  </span>
+                  {t.services.desc}
+                </p>
+              </div>
+
+              <div className="pt-4">
+                <div className="h-1 w-24 bg-gradient-to-r from-[#981c00] to-transparent rounded-full mx-auto md:mx-0"></div>
+              </div>
+            </div>
+
+            {/* Image Section */}
+            <div className="flex-1 relative w-full flex justify-center md:justify-end p-6 md:p-0">
+              {/* Glow Effect */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#981c00]/20 rounded-full blur-[80px] z-0"></div>
+
+              <img
+                src="/delivery_service.png"
+                alt="Free Delivery Service"
+                className="relative z-10 w-64 md:w-80 lg:w-96 object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Footer = () => {
   const { t } = useContext(LanguageContext);
   return (
-    <footer className="bg-slate-900 text-slate-300 py-16">
+    <footer id="contact" className="bg-slate-900 text-slate-300 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
@@ -734,7 +825,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div >
             <h4 className="text-white font-semibold mb-6">{t.footer.contact}</h4>
             <ul className="space-y-4">
               <li className="flex items-center gap-3">
@@ -804,6 +895,7 @@ const App = () => {
 
           <Navbar />
           <Hero />
+          <Services />
           <Gallery onSelectBegena={setSelectedBegena} />
           <Footer />
 
@@ -812,6 +904,12 @@ const App = () => {
             <BegenaDetailPage
               item={selectedBegena}
               onClose={() => setSelectedBegena(null)}
+              onContactClick={() => {
+                setSelectedBegena(null);
+                setTimeout(() => {
+                  window.location.hash = 'contact';
+                }, 300);
+              }}
             />
           )}
         </div>
