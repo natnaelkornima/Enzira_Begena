@@ -4,7 +4,7 @@ import { translations } from '../data/translations';
 export const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('en');
+    const [language, setLanguage] = useState('am');
     const t = translations[language];
 
     return (
