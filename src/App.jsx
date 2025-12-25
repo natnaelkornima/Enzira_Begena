@@ -81,7 +81,7 @@ const translations = {
     detail: {
       back: "ወደ በገናዎች ተመለስ",
       specifications: "ዝርዝሮች",
-      strings: "10 ክሮች",
+      strings: "10 አውታር",
       stringsDesc: "ከበግ ትንታኔ የተሰሩ",
       dimensions: "53\" × 24\"",
       dimensionsDesc: "ቁመት × ስፋት",
@@ -310,13 +310,13 @@ const BegenaDetailPage = ({ item, onClose }) => {
                   onClick={() => setShowBagImage(false)}
                   className={`p-2 rounded-xl border-2 transition-all ${!showBagImage ? 'border-[#981c00] bg-[#981c00]/10' : 'border-slate-200 hover:border-slate-300'}`}
                 >
-                  <img src={item.image} alt="Begena" className="w-12 h-16 object-cover rounded-lg" />
+                  <img src={item.image} alt="Begena" className="w-10 h-14 object-cover rounded-lg" />
                 </button>
                 <button
                   onClick={() => setShowBagImage(true)}
                   className={`p-2 rounded-xl border-2 transition-all ${showBagImage ? 'border-[#981c00] bg-[#981c00]/10' : 'border-slate-200 hover:border-slate-300'}`}
                 >
-                  <img src={item.bagImage} alt="With Bag" className="w-12 h-16 object-cover rounded-lg" />
+                  <img src={item.bagImage} alt="With Bag" className="w-10 h-14 object-cover rounded-lg" />
                 </button>
               </div>
             )}
