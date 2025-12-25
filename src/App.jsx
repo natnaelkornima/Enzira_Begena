@@ -26,7 +26,7 @@ const translations = {
     services: {
       title: "Our Services",
       delivery: "Free Delivery",
-      desc: " exclusively for our customers in Addis Ababa. We bring the sacred sounds to your doorstep with care.",
+      desc: " exclusively for our customers in Addis Ababa.We will deliver your Begena order quickly. ",
       badge: "Premium Service"
     },
     gallery: {
@@ -80,8 +80,8 @@ const translations = {
     },
     services: {
       title: "አገልግሎቶቻችን",
-      delivery: "ነፃ ማድረሻ",
-      desc: " ለአዲስ አበባ ደንበኞቻችን ብቻ። የተቀደሰውን ድምፅ በጥንቃቄ ወደ ደጃፍዎ እናመጣለን።",
+      delivery: "ነፃ Delivery",
+      desc: " ለአዲስ አበባ ደንበኞቻችን ብቻ። ያዘዙትን በገና ያሉበት ድርስ በፍጥነት እናቀርባለን።",
       badge: "ልዩ አገልግሎት"
     },
     gallery: {
@@ -94,7 +94,7 @@ const translations = {
       back: "ወደ በገናዎች ተመለስ",
       specifications: "ዝርዝሮች",
       strings: "10 አውታር",
-      stringsDesc: "ከበግ ትንታኔ የተሰሩ",
+      stringsDesc: "ከበግ አንጀት የተሰሩ",
       dimensions: "53\" × 24\"",
       dimensionsDesc: "ቁመት × ስፋት",
       handcrafted: "በእጅ የተሰራ",
@@ -132,46 +132,46 @@ const begenas = [
     bagImage: "/bag_1.jpg",
     description: {
       en: "Ethiopian spiritual instrument with amazing sound. 10 strings made from lamb intestine. Beautiful design with patterns and cross motifs. 53 inch long × 24 inch wide.",
-      am: "በድንቅ ዲዛይን የተዋበ በገና ከጉልህ ድምፅ ጋር። በእንስሳት ተዋጽዖ የተሰሩ 10 ክር ያሉት። በተለያዩ ሐረጎች መስቀል ዲዛይን የተዋበ። 53 ኢንች ቁመት እና 24 ኢንች ስፋት ያለው።"
+      am: "በድንቅ ዲዛይን የተዋበ በገና ከጉልህ ድምፅ ጋር። በእንስሳት ተዋጽዖ የተሰሩ 10 አውታር ያሉት። በተለያዩ ሐረጎች መስቀል ዲዛይን የተዋበ። 53 ኢንች ቁመት እና 24 ኢንች ስፋት ያለው።"
     }
   },
   {
     id: 2,
     number: "B-002",
     name: { en: "Begena Two", am: "በገና ሁለት" },
-    price: "7,500 ETB",
-    priceWithBag: "9,000 ETB",
+    price: "8,500 ETB",
+    priceWithBag: "10,000 ETB",
     image: "/begena_new_2.png",
     bagImage: "/bag_2.jpg",
     description: {
       en: "Ethiopian spiritual instrument with amazing sound. 10 strings made from lamb intestine. Handcrafted with premium leather and authentic resonance. 53 inch long × 24 inch wide.",
-      am: "በድንቅ ዲዛይን የተዋበ በገና ከጉልህ ድምፅ ጋር። በእንስሳት ተዋጽዖ የተሰሩ 10 ክር ያሉት። በተለያዩ ሐረጎች መስቀል ዲዛይን የተዋበ። 53 ኢንች ቁመት እና 24 ኢንች ስፋት ያለው።"
+      am: "በድንቅ ዲዛይን የተዋበ በገና ከጉልህ ድምፅ ጋር። በእንስሳት ተዋጽዖ የተሰሩ 10 አውታር ያሉት። በተለያዩ ሐረጎች መስቀል ዲዛይን የተዋበ። 53 ኢንች ቁመት እና 24 ኢንች ስፋት ያለው።"
     }
   },
   {
     id: 3,
     number: "B-003",
     name: { en: "Begena Three", am: "በገና ሶስት" },
-    price: "7,500 ETB",
-    priceWithBag: "9,000 ETB",
+    price: "9,000 ETB",
+    priceWithBag: "11,000 ETB",
     image: "/begena_new_3.jpg",
     bagImage: "/bag_3.jpg",
     description: {
       en: "Ethiopian spiritual instrument with amazing sound. 10 strings made from lamb intestine. Beautiful design adorned with Saint David's image. 53 inch long × 24 inch wide.",
-      am: "በድንቅ ዲዛይን የተዋበ በገና ከጉልህ ድምፅ ጋር። በእንስሳት ተዋጽዖ የተሰሩ 10 ክር ያሉት። በቅዱስ ዳዊት ምስል የተዋበ። 53 ኢንች ቁመት እና 24 ኢንች ስፋት ያለው።"
+      am: "በድንቅ ዲዛይን የተዋበ በገና ከጉልህ ድምፅ ጋር። በእንስሳት ተዋጽዖ የተሰሩ 10 አውታር ያሉት። በቅዱስ ዳዊት ምስል የተዋበ። 53 ኢንች ቁመት እና 24 ኢንች ስፋት ያለው።"
     }
   },
   {
     id: 4,
     number: "B-004",
     name: { en: "Begena Four", am: "በገና አራት" },
-    price: "7,500 ETB",
-    priceWithBag: "9,000 ETB",
+    price: "10,000 ETB",
+    priceWithBag: "12,000 ETB",
     image: "/begena_new_4.png",
     bagImage: "/bag_4.png",
     description: {
       en: "Ethiopian spiritual instrument with amazing sound. 10 strings made from lamb intestine. Beautiful design with crown carvings and cross patterns. 53 inch long × 24 inch wide.",
-      am: "በድንቅ ዲዛይን የተዋበ በገና ከጉልህ ድምፅ ጋር። በእንስሳት ተዋጽዖ የተሰሩ 10 ክር ያሉት። በዘውድ ቅርጻ እና መስቀል ንድፍ የተዋበ። 53 ኢንች ቁመት እና 24 ኢንች ስፋት ያለው።"
+      am: "በድንቅ ዲዛይን የተዋበ በገና ከጉልህ ድምፅ ጋር። በእንስሳት ተዋጽዖ የተሰሩ 10 አውታር ያሉት። በዘውድ ቅርጻ እና መስቀል ንድፍ የተዋበ። 53 ኢንች ቁመት እና 24 ኢንች ስፋት ያለው።"
     }
   },
   {
@@ -403,7 +403,9 @@ const BegenaDetailPage = ({ item, onClose, onContactClick }) => {
                       </div>
                       <div>
                         <span className="font-medium text-slate-900">{t.detail.withBag}</span>
-                        <span className="ml-2 text-xs bg-[#981c00] text-white px-2 py-0.5 rounded-full">+1,500 ETB</span>
+                        <span className="ml-2 text-xs bg-[#981c00] text-white px-2 py-0.5 rounded-full">
+                          +{(parseInt(item.priceWithBag.replace(/[^0-9]/g, '')) - parseInt(item.price.replace(/[^0-9]/g, ''))).toLocaleString()} ETB
+                        </span>
                       </div>
                     </div>
                     <span className="font-bold text-[#981c00]">{item.priceWithBag}</span>
@@ -834,7 +836,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Info size={18} className="text-slate-500" />
-                <span>kirubelhabtamu@gmail.com</span>
+                <span>enzirabegena19@gmail.com</span>
               </li>
               <li className="text-slate-500 text-sm mt-4">
                 Addis Ababa, Ethiopia
