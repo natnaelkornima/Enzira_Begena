@@ -1,73 +1,96 @@
-# 🎻 Enzira Begena Shop
+# Enzira Begena Shop (እንዚራ በገና)
 
-A modern, professional e-commerce platform for **Begena** (Ethiopian Lyre) enthusiasts. Experience the divine sound with our curated selection of high-quality instruments, accessories, and learning resources.
+Welcome to the **Enzira Begena Shop** website, a premium digital storefront for handcrafted Ethiopian Begena instruments. This application showcases the spiritual and historical significance of the Begena through a modern, responsive, and bilingual user interface.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=netlify)](https://enzira-begena-shop.netlify.app)
+![Hero Section](readme_assets/hero_preview.png)
 
-![Enzira Begena Shop Homepage](./homepage_screenshot.png)
+## 🌟 Key Features
 
-## ✨ Features
+### 1. **Premium & Responsive Design**
+   - A fully responsive layout that works seamlessly on desktop, tablet, and mobile devices.
+   - Modern aesthetics with glassmorphism effects, smooth gradients, and premium typography.
+   - Custom animations for a polished user experience.
 
-- **🌍 Multilingual Interface**: Seamlessly switch between **Amharic** and **English** for a personalized experience.
-- **📱 Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
-- **🛒 Interactive Catalog**: Browse various Begena categories with detailed information and high-quality imagery.
-- **❤️ Favorites System**: Save your preferred instruments to your personal wishlist with smooth animations.
-- **🎨 Premium UI/UX**: Crafted with a focus on aesthetics, featuring modern scrollbars, glassmorphism effects, and intuitive navigation.
-- **⚡ Fast & Secure**: Built on the latest web technologies for lightning-fast performance.
+### 2. **Bilingual Support (Amharic & English)**
+   - **Default Amharic**: The site launches in Amharic, respecting the local context.
+   - **One-Click Switch**: Users can instantly toggle between English and Amharic, with all content (navigation, products, details) translating dynamically.
 
-## 🛠️ Tech Stack
+### 3. **Interactive Product Gallery**
+   - Beautiful grid display of available Begenas.
+   - High-quality imagery with hover effects.
+   - **Favorites System**: Users can add items to their wishlist, which persists via local storage.
 
-- **Framework**: [React 19](https://react.dev/)
+![Gallery Section](readme_assets/gallery_preview.png)
+
+### 4. **Detailed Product View & Dynamic Pricing**
+   - Detailed modal view for each instrument.
+   - **Package Options**: Users can choose to buy the Begena alone or with a carrying bag.
+   - **Smart Pricing**: The price automatically updates based on the selection (e.g., adding +1,500 ETB or +2,000 ETB depending on the model).
+   - **Direct Ordering**: "Order Now" button pre-fills a Telegram message with the specific product details for easy purchasing.
+
+### 5. **Services Section**
+   - dedicated section highlighting unique value propositions.
+   - Featured "Free Delivery" service for Addis Ababa customers.
+
+![Services Section](readme_assets/services_preview.png)
+
+### 6. **Contact & Footer**
+   - Quick access to contact information.
+   - Smooth scrolling integration for "Contact Us" actions.
+
+## 🛠️ Technology Stack
+
+- **Frontend Framework**: [React](https://reactjs.org/)
 - **Build Tool**: [Vite](https://vitejs.dev/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **Deployment**: [Netlify](https://www.netlify.com/)
+- **Font**: Google Fonts (Inter, Shiromeda, Geom)
 
 ## 🚀 Getting Started
 
-### Prerequisites
+To run this project locally, follow these steps:
 
-- [Node.js](https://nodejs.org/) (v18 or higher)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/natnaelkornima/Enzira_Begena.git
+    cd Enzira_Begena
+    ```
 
-### Installation
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/natnaelkornima/Enzira_Begena.git
-   cd "Enzira Begena Shop"
-   ```
+3.  **Run Development Server**
+    ```bash
+    npm run dev
+    ```
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+4.  **Build for Production**
+    ```bash
+    npm run build
+    ```
 
-3. **Start the development server**:
-   ```bash
-   npm run dev
-   ```
+## 📂 Project Structure
 
-4. **Open your browser**:
-   Navigate to `http://localhost:5173` to see the application in action.
+The project has been refactored for scalability:
 
-## 📦 Deployment
-
-This project is configured for continuous deployment on **Netlify**.
-
-- **Build Command**: `npm run build`
-- **Publish Directory**: `dist`
-
-Live URL: [https://enzira-begena-shop.netlify.app](https://enzira-begena-shop.netlify.app)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request or open an issue for any enhancements or bug fixes.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```
+src/
+├── components/         # UI and Feature components
+│   ├── ui/             # Reusable UI elements (Button, Badge)
+│   ├── Hero.jsx
+│   ├── Gallery.jsx
+│   ├── Services.jsx
+│   ├── Navbar.jsx
+│   └── ...
+├── contexts/           # React Contexts (Language, Favorites)
+├── data/               # Static data (translations, product lists)
+└── App.jsx             # Main layout and provider setup
+public/
+├── images/             # Product and asset images
+└── ...
+```
 
 ---
-
-*Crafting harmony through technology. Enzira Begena Shop.*
+© 2025 Enzira Begena Shop. All rights reserved.
